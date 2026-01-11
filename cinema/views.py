@@ -1,6 +1,10 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated, AllowAny
-from django.db.models import Count, F, IntegerField, ExpressionWrapper
+from rest_framework.permissions import (IsAuthenticated,
+                                        AllowAny)
+from django.db.models import (Count,
+                              F,
+                              IntegerField,
+                              ExpressionWrapper)
 
 from cinema.models import (
     Genre,
@@ -80,7 +84,7 @@ class MovieViewSet(viewsets.ModelViewSet):
 
 
 class MovieSessionViewSet(viewsets.ModelViewSet):
-    queryset = MovieSession.objects.all()   # ← ОБОВʼЯЗКОВО
+    queryset = MovieSession.objects.all()
     permission_classes = (AllowAny,)
     pagination_class = None
 
